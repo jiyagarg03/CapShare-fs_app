@@ -82,3 +82,9 @@ Now we did that
 
 Protection: From bots, fake emails, and spam
 Arcjet is used for this
+
+Now, recording feature after everything:
+
+bubble:true
+bubbling is a concept within smthng known as event propagation
+we r stimulating a user tigerring file input change

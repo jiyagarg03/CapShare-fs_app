@@ -9,6 +9,7 @@ import {
   saveVideoDetails,
 } from "@/lib/actions/video";
 import { useFileInput } from "@/lib/hooks/useFileInput";
+import { set } from "better-auth";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
@@ -49,6 +50,41 @@ const Page = () => {
       setVideoDuration(video.duration);
     }
   }, [video.duration]);
+
+  useEffect(() => {
+    const checkForRecordedVideo = async () => {
+      try {
+        const stored = sessionStorage.getItem("recordedVideo");
+
+        if (!stored) return;
+
+        const { url, name, type, duration } = JSON.parse(stored);
+        const blob = await fetch(url).then((res) => res.blob());
+        const file = new File([blob], name, { type, lastModified: Date.now() });
+
+        if (video.inputRef.current) {
+          const dataTransfer = new DataTransfer();
+          dataTransfer.items.add(file);
+          video.inputRef.current.files = dataTransfer.files;
+
+          const event = new Event("change", { bubbles: true });
+          video.inputRef.current.dispatchEvent(event);
+
+          video.handleFileChange({
+            target: { files: dataTransfer.files },
+          } as ChangeEvent<HTMLInputElement>);
+        }
+
+        if (duration) setVideoDuration(duration);
+
+        sessionStorage.removeItem("recordedVideo");
+        URL.revokeObjectURL(url); // Clean up the URL
+      } catch (e) {
+        console.error(e, "Error loading  recorded video");
+      }
+    };
+    checkForRecordedVideo();
+  }, [video]);
 
   const [error, setError] = useState("");
 
@@ -110,7 +146,7 @@ const Page = () => {
         visibility: formData.visibility as Visibility, //added
       });
 
-      router.push(`/video/${videoId}`);
+      router.push(`/`);
     } catch (error) {
       console.log("Error submitting form", error);
     } finally {
