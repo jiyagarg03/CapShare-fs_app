@@ -1,0 +1,80 @@
+Hk!
+
+we need two layouts, one for auth and seperate for others(coz we need navbar in all of them)
+made component: navbar, passing children = reactnode
++empty user for now
+
+now hoeader, pass props from index.d.ts
+use them in component, and then define in page.tsx
+
+now with DropdownList component, 
+move to video card on screen
+
+VideoCard, page.tsx with DummyCards for now
+Now to the router for when we click it
+  
+Auth UI page now:
+page.tsx
+
+Now it's Logic:
+Use better-auth
+console.cloud.google.com
+
+make a project -> do branding -> then make a new client -> with site url and sitr url/api/auth/callback/google
+then add secret in env
+
+now auth is set, we need to set database coz we need to store the users
+ 
+Database Setup: Xata
+After making account, we will connectit with xata adapter, since node postgress is not very stable with latest version on nextjs
+
+sudo npm install -g @xata.io/cli
+xata auth login
+xata init
+
+now we will use drizzle
+
+Note:
+1) Drizzle is for structuring, querying, and managing your data in code; Xata is the backend service where your data is stored and managed in the cloud
+2) 
+Firebase: Best for apps needing real-time data sync, authentication, and fast prototyping, especially for mobile or chat apps.
+Sanity: Best for projects focused on content management, like blogs or marketing sites, where editors need a flexible CMS.
+Xata: Best for scalable web apps that need SQL features, advanced search, and easy cloud/database management
+
+Then we will make cmd:
+npm drizzle and some
+
+then make drizzle folder then files in it and drizzle.config.ts
+-in schema.ts, schemas will be autogenetrated by better auth
+
+
+lib: auth.tsto 
+hook up drizzle and better auth 
+
+Now generated scehma and then pushed it in xata 
+Edited auth.ts
+
+Make auth-client.ts in lib folder
+This will be used in the client side to get user data
+
+Then app/api/auth/[...all]/route.ts
+toNextJsHandler is used to handle the auth routes
+
+we are able to go to homepage without signing in, which is not right
+so we will make a middleware.ts file in the root of app folder
+to check if user is signed in or not
+and redirect to auth page if not signed in
+
+Now make a new route: upload/page.tsx
+
+Write needed props in page.tsx then functinality in component
+
+Now make hooks useFilenput.ts
+
+After setting functinalities now we will head over too:
+-Upload video to bunny
+-Upload the thumbnail to Database
+-Attach thumbnail to video
+-Create a new DB entry fr the video details(urls, data)
+
+

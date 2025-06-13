@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Jiya-Garg-s-workspace-4mm1u5.ap-southeast-2.xata.sh/db/fs_capshare",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
