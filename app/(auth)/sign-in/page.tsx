@@ -71,7 +71,7 @@ const page = () => {
             <h1>CapShare</h1>
           </Link>
           <p>
-            Create and sahre your very first <span>CapShare video</span> in no
+            Create and share your very first <span>CapShare video</span> in no
             time!
           </p>
           <button onClick={handleSignIn}>
