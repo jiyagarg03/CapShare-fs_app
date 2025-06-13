@@ -37,7 +37,7 @@ export const useFileInput = (maxSize: number) => {
           setDuration(0);
         }
 
-        URL.revokeObjectURL(video.src);
+        //URL.revokeObjectURL(video.src);
       };
 
       video.src = objectUrl;

@@ -78,3 +78,7 @@ After setting functinalities now we will head over too:
 -Create a new DB entry fr the video details(urls, data)
 
 
+Now we did that
+
+Protection: From bots, fake emails, and spam
+Arcjet is used for this

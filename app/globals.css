@@ -82,15 +82,15 @@
 
 @layer components {
   .wrapper {
-    @apply max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-40;
   }
 
   .wrapper-md {
-    @apply max-w-3xl w-full mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-3xl w-full mx-auto px-4 sm:px-10 lg:px-40;
   }
 
   .wrapper-lg {
-    @apply max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-4xl w-full mx-auto px-4 sm:px-10 lg:px-40;
   }
 
   .page {
@@ -304,7 +304,7 @@
     @apply h-[90px] border-b border-gray-20 flex items-center;
 
     nav {
-      @apply flex items-center justify-between max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full;
+      @apply flex items-center justify-between max-w-[1440px] mx-auto px-4 sm:px-10 lg:px-40 w-full;
 
       a {
         @apply flex items-center gap-2.5;
