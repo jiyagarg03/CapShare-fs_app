@@ -1,3 +1,6 @@
+// for deployement
+export const runtime = "nodejs";
+
 import aj from "@/lib/arcjet";
 import { auth } from "@/lib/auth";
 import { ArcjetDecision, slidingWindow, validateEmail } from "@arcjet/next";
