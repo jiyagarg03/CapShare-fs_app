@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CapShare – Record, Upload, and Share Screen Videos Seamlessly
+
+![Next.js](https://img.shields.io/badge/Next.js-15-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-2.2-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+
+**Live Demo:** [capshare-app.vercel.app](https://capshare-app.vercel.app)  
+**Video Walkthrough:** [Watch on YouTube](https://youtu.be/7OAler-MuuY)  
+**Source Code:** [GitHub Repository](https://github.com/jiyagarg03/capshare-app)
+
+CapShare is a full-stack, high-performance screen recording and sharing platform, offering a polished alternative to tools like Loom. Built with Next.js App Router and secured with Arcjet, CapShare supports instant screen capture, authenticated video uploads via Bunny.net, and a public feed of shared videos.
+
+---
+
+## 📽 Demo
+
+[![Watch the Demo](https://raw.githubusercontent.com/jiyagarg03/capshare-app/main/public/assets/demo-thumb.png)](https://youtu.be/7OAler-MuuY)
+
+> A 36-second walkthrough of CapShare, demonstrating Google login, video recording, upload to Bunny CDN, and playback.
+
+---
+
+## Features Overview
+
+- Next.js 15 (App Router) setup with full SSR & dynamic routes
+- Google OAuth 2.0 using BetterAuth
+- Complete screen recording and upload flow
+- Bunny.net CDN for smooth video playback
+- Arcjet protection: email validation + rate-limiting middleware
+- Drizzle ORM with PostgreSQL (via Xata) for schema-safe storage
+- Dynamic user profiles and video detail pages
+- Responsive design using TailwindCSS
+- Deployed via Vercel
+
+---
+
+## Tech Stack
+
+| Layer        | Stack                                      |
+|--------------|---------------------------------------------|
+| Frontend     | Next.js, Tailwind CSS, TypeScript           |
+| Auth         | BetterAuth, Google OAuth                    |
+| Backend      | Arcjet (middleware), Drizzle ORM            |
+| Database     | PostgreSQL via Xata                         |
+| Media/CDN    | Bunny.net (video upload + streaming)        |
+| Deployment   | Vercel (edge/serverless)
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/jiyagarg03/capshare-app
+cd capshare-app
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To run CapShare locally, you'll need to configure the following environment variables:
 
-## Learn More
+#### Google OAuth  
+- `GOOGLE_CLIENT_ID`  
+- `GOOGLE_CLIENT_SECRET`
 
-To learn more about Next.js, take a look at the following resources:
+#### BetterAuth  
+- `BETTER_AUTH_SECRET`  
+- `NEXT_PUBLIC_BASE_URL`  
+- `BETTER_AUTH_URL`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Bunny.net (video uploads & streaming)  
+- `BUNNY_STORAGE_ACCESS_KEY`  
+- `BUNNY_STREAM_ACCESS_KEY`  
+- `BUNNY_LIBRARY_ID`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Arcjet (rate limiting & email protection)  
+- `ARCJET_API_KEY`
 
-## Deploy on Vercel
+#### Xata Database (PostgreSQL)  
+- `XATA_API_KEY`  
+- `DATABASE_URL_POSTGRES`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+MIT License • © 2025 Jiya Garg
+
+
