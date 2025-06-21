@@ -14,7 +14,7 @@ CapShare is a full-stack, high-performance screen recording and sharing platform
 
 ---
 
-## 📽 Demo
+## Demo
 
 [![Watch the Demo](https://raw.githubusercontent.com/jiyagarg03/capshare-app/main/public/assets/demo-thumb.png)](https://youtu.be/7OAler-MuuY)
 
